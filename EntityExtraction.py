@@ -1,24 +1,27 @@
 import pandas as pd
 import nltk,re,pprint
 import matplotlib.pyplot as plt
+import numpy as np
+
+df = pd.read_csv('Consumer_Complaints.csv') # READS THE  CSV FILE
 
 def preprocess_complaint_narratives(df): # receives argument df. Is this dataframe?
-	sentences = [] # create sentences
-	for doc in df: # for every observation in the dataframe
+	sentences = [] # CREATES AN EMPTY LIST FOR SENTECES. IS THIS SUPPOSED TO BE EMPTY?
+	for doc in df: # FOR EVERY ANNOTATION IN THE CONSUMER COMPLAINT FIELD
 		#Sentence tokenize
-		sent = nltk.___________(doc) # give method
+		sent = nltk.___________(doc) # GIVE SOMETHING TO MAKE THE TOKENS IN THE SENTENCES - > sent_tokenize()
 		#word tokenize
-		sent = [nltk.______(sent) for s in sent] # give method method and input HATE ONE LINERS
+		sent = [nltk.______(sent) for s in sent] # TURNS SENTENCES INTO WORDS -> word_tokenize()
 		#Part of speech tagging
-		sent = [nltk.______(sent) for s in sent] # give method and input | sent or doc
-		for s in sent:
-			sentences.append(s)
+		sent = [nltk.______(sent) for s in sent] # NOT SURE ABOUT THIS SECTION
+		for s in sent: # RUNS LOOP FOR ALL ITEMS IN SENT
+			sentences.append(s) # APPENDS ALL THE ITEMS INTO SENTENCES
 
 	return sentences
 
 file = "notNull.csv" # my file cleaned from the null narratives
 df = pd.read_csv(file)
-compNarr = df['_______'] # Consumer narrative 
+compNarr = df['_______'] # Consumer narrative
 banks = set(df['______']) # Company
 
 tokens = preprocess_complaint_narratives(________) # compNarr
